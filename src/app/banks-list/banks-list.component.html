@@ -1,0 +1,42 @@
+<h2>Banks List</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Bank Name</th>
+      <th>Bank Code</th>
+      <th>Status</th>
+      <th>Branches</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bank of banks">
+      <td>{{ bank.name }}</td>
+      <td>{{ bank.code }}</td>
+      <td>{{ bank.status }}</td>
+      <td>{{ bank.noOfBranches }}</td>
+      <td>
+        <button class="btn btn-info">
+          Update
+        </button>
+
+        <button
+          
+          class="btn btn-danger"
+          style="margin-left: 10px"
+        >
+          Delete
+        </button>
+
+        <button
+          
+          class="btn btn-warning"
+          style="margin-left: 10px"
+        >
+          View
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
