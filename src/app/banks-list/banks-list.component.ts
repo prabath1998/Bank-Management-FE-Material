@@ -10,10 +10,12 @@ import { BanksService } from '../services/banks.service';
 })
 export class BanksListComponent implements OnInit {
   banks!:Bank[];
+  isActive!:boolean;
 
   constructor(private banksService:BanksService,private router:Router) { }
 
   ngOnInit(): void {
+    
     this.getBanks();
   }
 
@@ -36,5 +38,8 @@ export class BanksListComponent implements OnInit {
   bankDetails(id: number) {
     this.router.navigate(['bank-details', id]);
   }
+
+ 
+  
 
 }

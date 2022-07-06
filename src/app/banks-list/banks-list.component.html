@@ -13,7 +13,7 @@
     <tr *ngFor="let bank of banks">
       <td>{{ bank.name }}</td>
       <td>{{ bank.code }}</td>
-      <td>{{ bank.status }}</td>
+      <td [ngStyle]="{'color':bank.status == 'Active' ? 'green' : 'red' }">{{ bank.status}}</td>
       <td>{{ bank.noOfBranches }}</td>
       <td>
         <button (click)="updateBank(bank.bankId)" class="btn btn-info">
