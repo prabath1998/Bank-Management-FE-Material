@@ -16,12 +16,12 @@
       <td>{{ bank.status }}</td>
       <td>{{ bank.noOfBranches }}</td>
       <td>
-        <button class="btn btn-info">
+        <button (click)="updateBank(bank.bankId)" class="btn btn-info">
           Update
         </button>
 
         <button
-          
+          (click)="deleteBank(bank.bankId)"
           class="btn btn-danger"
           style="margin-left: 10px"
         >
@@ -29,7 +29,7 @@
         </button>
 
         <button
-          
+          (click)="bankDetails(bank.bankId)"
           class="btn btn-warning"
           style="margin-left: 10px"
         >

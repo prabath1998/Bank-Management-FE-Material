@@ -23,4 +23,18 @@ export class BanksListComponent implements OnInit {
     });
   }
 
+  updateBank(id: number) {
+    this.router.navigate(['update-bank', id]);
+  }
+
+  deleteBank(id: number) {
+    this.banksService.deleteBank(id).subscribe((data) => {
+      this.getBanks();
+    });
+  }
+
+  bankDetails(id: number) {
+    this.router.navigate(['bank-details', id]);
+  }
+
 }

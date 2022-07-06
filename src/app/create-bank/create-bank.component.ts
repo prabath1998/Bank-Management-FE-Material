@@ -17,6 +17,10 @@ export class CreateBankComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    this.saveBank();
+  }
+
   saveBank(){
     this.banksService.createBank(this.bank).subscribe(
       (data) => {
