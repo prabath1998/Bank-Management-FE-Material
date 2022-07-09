@@ -1,5 +1,11 @@
 <mat-toolbar color="primary" class="navbar-fixed-top">
-  <button routerLink="banks" routerLinkActive="active" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button
+    routerLink="banks"
+    routerLinkActive="active"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
     <mat-icon>home</mat-icon>
   </button>
   <span routerLink="banks" routerLinkActive="active">Home</span>
@@ -9,10 +15,11 @@
   </button>
 </mat-toolbar>
 
-<b><h1 class="text-center">{{ title }}</h1></b>
+<b
+  ><h1 class="text-center">{{ title }}</h1></b
+>
 <div class="container">
   <router-outlet></router-outlet>
-  <!-- <app-employee-list></app-employee-list> -->
 </div>
 
 <footer class="footer">
