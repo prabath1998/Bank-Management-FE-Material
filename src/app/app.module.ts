@@ -8,6 +8,13 @@ import { BanksListComponent } from './banks-list/banks-list.component';
 import { CreateBankComponent } from './create-bank/create-bank.component';
 import { UpdateBankComponent } from './update-bank/update-bank.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { BankDetailsComponent } from './bank-details/bank-details.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

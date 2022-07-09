@@ -10,7 +10,7 @@ import { BanksService } from '../services/banks.service';
 })
 export class BankDetailsComponent implements OnInit {
 
-
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   id!:number;
   bank!:Bank;
 

@@ -1,20 +1,15 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="banks" routerLinkActive="active"
-        >Banks Management Application</a
-      >
-    </li>
+<mat-toolbar color="primary" class="navbar-fixed-top">
+  <button routerLink="banks" routerLinkActive="active" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span routerLink="banks" routerLinkActive="active">Home</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button class="me-3" color="warn" routerLink="create-bank">
+    New <mat-icon>add_circle</mat-icon>
+  </button>
+</mat-toolbar>
 
-    <li class="nav-item">
-      <a class="nav-link" routerLink="create-bank" routerLinkActive="active"
-        >Add Bank</a
-      >
-    </li>
-  </ul>
-</nav>
-
-<h1 class="text-center">{{ title }}</h1>
+<b><h1 class="text-center">{{ title }}</h1></b>
 <div class="container">
   <router-outlet></router-outlet>
   <!-- <app-employee-list></app-employee-list> -->

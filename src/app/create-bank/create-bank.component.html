@@ -1,60 +1,51 @@
 <div class="col-md-6 offset-md-3 mt-5">
-    <h3>Create Bank</h3>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="">Bank Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          [(ngModel)]="bank.name"
-          name="name"
-        />
-      </div>
-  
-      <div class="form-group">
-        <label for="">Code</label>
-        <input
-          type="text"
-          class="form-control"
-          id="code"
-          [(ngModel)]="bank.code"
-          name="code"
-        />
-      </div>
-  
-      <!-- <div class="form-group">
-        <label for="">status</label>
-        <input
-          type="text"
-          class="form-control"
-          id="status"
-          [(ngModel)]="bank.status"
-          name="status"
-        />
-      </div> -->
+  <h3>Create Bank</h3>
+  <form (ngSubmit)="onSubmit()">
+   
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput id="name" [(ngModel)]="bank.name" name="name" />
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="status">Select Status:</label>
-        <select class="form-control" id="status" name="status" [(ngModel)]="bank.status">
-          <option value="Active">Active</option>
-          <option value="Inactive">Inactive</option>          
-        </select>
-      </div> 
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Code</mat-label>
+      <input
+        matInput
+        type="text"
+        id="name"
+        [(ngModel)]="bank.code"
+        name="name"
+      />
+    </mat-form-field>
 
-      <div class="form-group">
-        <label for="">Branches</label>
-        <input
-          type="text"
-          class="form-control"
-          id="branches"
-          [(ngModel)]="bank.noOfBranches"
-          name="branches"
-        />
-      </div>
-      <br />
-      <button class="btn btn-success" type="submit">Submit</button>
-      <button class="btn btn-danger ms-3" (click)="goToBanksList()">Cancel</button>
-    </form>
-  </div>
-  
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Choose an option</mat-label>
+      <mat-select id="status" name="status" [(ngModel)]="bank.status">
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Inactive">Inactive</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Branches</mat-label>
+      <input
+        matInput
+        type="text"
+        id="name"
+        [(ngModel)]="bank.noOfBranches"
+        name="name"
+      />
+    </mat-form-field>
+
+    <br />
+    <button mat-raised-button color="primary" type="submit">Add</button>
+    <button
+      class="ms-2"
+      mat-raised-button
+      color="warn"
+      (click)="goToBanksList()"
+    >
+      Cancel
+    </button>
+  </form>
+</div>

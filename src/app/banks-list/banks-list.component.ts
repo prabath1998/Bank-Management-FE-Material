@@ -11,6 +11,7 @@ import { BanksService } from '../services/banks.service';
 export class BanksListComponent implements OnInit {
   banks!:Bank[];
   isActive!:boolean;
+  displayedColumns: string[] = ['name','code','status','branches','actions'];
 
   constructor(private banksService:BanksService,private router:Router) { }
 
