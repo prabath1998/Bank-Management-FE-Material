@@ -1,7 +1,7 @@
-<div class="col-md-3 offset-md-3 mt-5">
+<!-- <div class="col-md-3 offset-md-3 mt-5">
     <h3>View Bank Details</h3>
   
-    <div class="card" style="width: 18rem">
+    <div class="card" style="width: 20rem">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
           <label for=""><b>ID : </b></label> {{ bank.bankId }}
@@ -20,4 +20,18 @@
           </li>
       </ul>
     </div>
-  </div>
+  </div> -->
+
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{bank.name}}</mat-card-title>
+      <mat-card-subtitle [ngStyle]="{ color: bank.status == 'Active' ? 'green' : 'red' }">{{bank.status}}</mat-card-subtitle>
+      <img mat-card-sm-image src="https://www.passionateinmarketing.com/wp-content/uploads/2022/02/getty_158673029_9707279704500119_78594.jpg" >
+    </mat-card-title-group>
+    <mat-card-content>
+      <b>Branches: {{bank.noOfBranches}}</b> <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus laoreet non curabitur gravida arcu ac. Pretium viverra suspendisse potenti nullam ac tortor vitae. Pellentesque habitant morbi tristique senectus et. Mauris ultrices eros in cursus turpis massa tincidunt. Facilisi etiam dignissim diam quis enim lobortis. Dignissim sodales ut eu sem. Pretium vulputate sapien nec sagittis aliquam malesuada. Est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Viverra aliquet eget sit amet tellus cras. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Tincidunt praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Consectetur lorem donec massa sapien faucibus et. Congue mauris rhoncus aenean vel elit. Ut venenatis tellus in metus vulputate eu. Nunc pulvinar sapien et ligula ullamcorper. At augue eget arcu dictum varius duis at.</p>
+    </mat-card-content>
+  </mat-card>
+
+ 
