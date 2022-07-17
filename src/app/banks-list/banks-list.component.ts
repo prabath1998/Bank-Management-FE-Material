@@ -50,7 +50,7 @@ export class BanksListComponent implements OnInit {
 
   deleteBank(id: number) {
     this.banksService.deleteBank(id).subscribe((data) => {
-      this.toast.error({
+      this.toast.success({
         detail: 'DELETED',
         summary: 'Bank deleted successfully',
         duration: 5000,

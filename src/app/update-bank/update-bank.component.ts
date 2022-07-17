@@ -30,7 +30,7 @@ export class UpdateBankComponent implements OnInit {
   onSubmit(){
     this.banksService.updateBank(this.id,this.bank).subscribe(
       (data) => {
-        this.toast.info({detail:"UPDATED",summary:'Bank updated successfully',duration:5000});
+        this.toast.success({detail:"UPDATED",summary:'Bank updated successfully',duration:5000});
         this.goToBanksList();
       },
       (error) => console.log(error)
