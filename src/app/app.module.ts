@@ -16,6 +16,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import { NgToastModule } from 'ng-angular-popup';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,11 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatInputModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    NgToastModule,
+    MatPaginatorModule,
+    NgbModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

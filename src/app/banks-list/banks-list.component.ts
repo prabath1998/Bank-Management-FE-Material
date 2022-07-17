@@ -1,28 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { tap } from 'rxjs';
 import { Bank } from '../Model/Bank';
 import { BanksService } from '../services/banks.service';
 
 @Component({
   selector: 'app-banks-list',
   templateUrl: './banks-list.component.html',
-  styleUrls: ['./banks-list.component.css']
+  styleUrls: ['./banks-list.component.css'],
 })
 export class BanksListComponent implements OnInit {
-  banks!:Bank[];
-  isActive!:boolean;
-  displayedColumns: string[] = ['name','code','status','branches','actions'];
+  banks!: Bank[];
+  isActive!: boolean;
+  displayedColumns: string[] = [
+    'name',
+    'code',
+    'status',
+    'branches',
+    'actions',
+  ];
+  dataSource!: MatTableDataSource<any>;
 
-  constructor(private banksService:BanksService,private router:Router) { }
+  @ViewChild('paginator') paginator!: MatPaginator;
+
+  constructor(
+    private banksService: BanksService,
+    private router: Router,
+    private toast: NgToastService
+  ) {}
 
   ngOnInit(): void {
-    
     this.getBanks();
   }
 
-  private getBanks(){
-    this.banksService.getBanksList().subscribe((data)=>{
+  private getBanks() {
+    this.banksService.getBanksList().subscribe((data) => {
       this.banks = data;
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
   }
 
@@ -32,6 +50,11 @@ export class BanksListComponent implements OnInit {
 
   deleteBank(id: number) {
     this.banksService.deleteBank(id).subscribe((data) => {
+      this.toast.error({
+        detail: 'DELETED',
+        summary: 'Bank deleted successfully',
+        duration: 5000,
+      });
       this.getBanks();
     });
   }
@@ -39,8 +62,4 @@ export class BanksListComponent implements OnInit {
   bankDetails(id: number) {
     this.router.navigate(['bank-details', id]);
   }
-
- 
-  
-
 }
