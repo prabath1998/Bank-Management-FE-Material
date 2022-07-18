@@ -65,4 +65,8 @@ export class BanksListComponent implements OnInit {
   bankDetails(id: number) {
     this.router.navigate(['bank-details', id]);
   }
+
+  filterData($event:any){
+    this.dataSource.filter = $event.target.value;
+  }
 }
