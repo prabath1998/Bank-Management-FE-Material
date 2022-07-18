@@ -7,6 +7,7 @@ import { NgToastService } from 'ng-angular-popup';
 import { tap } from 'rxjs';
 import { Bank } from '../Model/Bank';
 import { BanksService } from '../services/banks.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-banks-list',
@@ -26,16 +27,19 @@ export class BanksListComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild('paginator') paginator!: MatPaginator;
-  @ViewChild(MatSort) matSort! : MatSort;
+  @ViewChild(MatSort) matSort!: MatSort;
 
   constructor(
     private banksService: BanksService,
     private router: Router,
-    private toast: NgToastService
+    private toast: NgToastService,
+    private ngxService: NgxUiLoaderService
   ) {}
 
   ngOnInit(): void {
+    this.ngxService.start();
     this.getBanks();
+    this.ngxService.stop();
   }
 
   private getBanks() {
@@ -52,6 +56,7 @@ export class BanksListComponent implements OnInit {
   }
 
   deleteBank(id: number) {
+    this.ngxService.start();
     this.banksService.deleteBank(id).subscribe((data) => {
       this.toast.success({
         detail: 'DELETED',
@@ -59,6 +64,7 @@ export class BanksListComponent implements OnInit {
         duration: 5000,
       });
       this.getBanks();
+      this.ngxService.stop()
     });
   }
 
@@ -66,7 +72,7 @@ export class BanksListComponent implements OnInit {
     this.router.navigate(['bank-details', id]);
   }
 
-  filterData($event:any){
+  filterData($event: any) {
     this.dataSource.filter = $event.target.value;
   }
 }

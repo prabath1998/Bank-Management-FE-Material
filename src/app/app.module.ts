@@ -19,8 +19,31 @@ import {MatCardModule} from '@angular/material/card';
 import { NgToastModule } from 'ng-angular-popup';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatSortModule} from '@angular/material/sort'; 
+import {MatSortModule} from '@angular/material/sort';
+// import { NgxUiLoaderModule } from "ngx-ui-loader"; 
 
+import {
+  NgxUiLoaderModule,
+  NgxUiLoaderConfig,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION,
+} from "ngx-ui-loader";
+
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  text:"Loading...",
+  textColor:"#FFFFFF",
+  textPosition:"center-center",
+  pbColor:"red",
+  bgsColor:"red",
+  fgsColor:"#16cf3c",
+  fgsType:SPINNER.doubleBounce,
+  fgsSize:100,
+  blur: 4,
+  pbDirection:PB_DIRECTION.leftToRight,
+  pbThickness:5 // progress bar thickness
+};
 
 @NgModule({
   declarations: [
@@ -48,7 +71,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatPaginatorModule,
     NgbModule,
     NgbPaginationModule,
-    MatSortModule
+    MatSortModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
