@@ -19,6 +19,8 @@ import {MatCardModule} from '@angular/material/card';
 import { NgToastModule } from 'ng-angular-popup';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatSortModule} from '@angular/material/sort'; 
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgToastModule,
     MatPaginatorModule,
     NgbModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

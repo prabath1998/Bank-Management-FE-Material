@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
@@ -25,6 +26,7 @@ export class BanksListComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild('paginator') paginator!: MatPaginator;
+  @ViewChild(MatSort) matSort! : MatSort;
 
   constructor(
     private banksService: BanksService,
@@ -41,6 +43,7 @@ export class BanksListComponent implements OnInit {
       this.banks = data;
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.matSort;
     });
   }
 
