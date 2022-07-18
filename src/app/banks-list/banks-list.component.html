@@ -1,7 +1,14 @@
 <h2>Banks List</h2>
 <div class="search-container">
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Search" autocomplete="off" (keyup)="filterData($event)"/>
+  <mat-form-field  class="search-form">
+    <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
+    <input
+      matInput
+      placeholder="Search"
+      autocomplete="off"
+      (keyup)="filterData($event)"
+    />
+    
   </mat-form-field>
 </div>
 
