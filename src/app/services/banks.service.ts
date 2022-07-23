@@ -8,7 +8,8 @@ import { Bank } from '../Model/Bank';
 })
 export class BanksService {
 
-  private baseURL = 'http://localhost:8080/api/v1/banks';
+  // private baseURL = 'http://localhost:8080/api/v1/banks';
+  private baseURL = 'https://bank-manager-springboot.herokuapp.com/api/v1/banks';
 
   constructor(private httpClient:HttpClient) { }
 
