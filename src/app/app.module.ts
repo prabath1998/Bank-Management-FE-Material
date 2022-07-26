@@ -31,6 +31,7 @@ import {
 } from "ngx-ui-loader";
 
 
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text:"Loading...",
   textColor:"#FFFFFF",
@@ -71,7 +72,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatPaginatorModule,
     NgbModule,
     NgbPaginationModule,
-    MatSortModule,
+    MatSortModule,    
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [],
